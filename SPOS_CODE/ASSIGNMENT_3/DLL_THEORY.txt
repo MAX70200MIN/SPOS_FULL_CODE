@@ -1,0 +1,45 @@
+THEROY :
+
+DLL files are ones that contain instructions to command several different computer programs to perform tasks.
+ For example, many operating systems use DLL files to function and can use 
+these to complete tasks like finding files or storage space.
+ DLL files have written code inside that command the different applications to perform actions.
+ On an operating system, 
+this might look like functions like opening or closing windows for unique programs.
+
+ALGORITHM :
+
+Algorithm/Flowchart: 
+1. Write a Java Class that uses C Codes -TestJNI.java public class TestJNI { static { 
+System.loadLibrary(“cal"); // Load native library at runtime 
+// cal.dll (Windows) or libcal.so (Unix) 
+} 
+// Declare a native method add() that receives nothing and returns void private native int add 
+(int n1,int n2); // Test Driver 
+public static void main(String[] args) { 
+// invoke the native method 
+System.out.println(“Addition is=”+new TestJNI().add(10,20); } } 
+Compile Java code: javac TestJNI.java 
+2.	Create the C/C++ Header file -TestJNI.h javah -jni TestJNI 
+3.	C Implementation -TestJNI.c 
+#include <jni.h> 
+#include <stdio.h> 
+#include “TestJNI.h" 
+// Implementation of native method add() of TestJNI class 
+
+JNIEXPORT jint JNICALL Java_TestJNI_add(JNIEnv *env, jobject thisObj,jint n1,jint n2) 
+{ jint res; 
+res=n1+n2; return res; 
+} 
+Compile c-program: 
+$gcc -I /usr/local/jdk1.8.0_91/include /usr/local/jdk1.8.0_91/include/linux -o libcal.so –shared TestJNI.c 
+ 
+4.	Run java program 
+$java -Djava.library.path=. TestJNI Addition is=30 
+ 
+ 
+5.	Repeat step 1-4 for all mathematical operations mentioned in problemstatement. 
+Flowchart: 
+ 
+ 
+ 

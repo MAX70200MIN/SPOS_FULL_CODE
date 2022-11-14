@@ -1,0 +1,42 @@
+THEORY :
+ 
+CONCEPT OF PAGE REPLACEMENT: 
+1.	Page Fault: Absence of page when referenced in main memory during paging leads to a page fault. 
+2.	Page Replacement: Replacement of already existing page from main memory by therequired new page is called as page replacement. 
+And the techniques used for it are called as page replacementalgorithms. 
+
+NEED OF PAGE REPLACEMENT: 
+Page replacement is used primarily for the virtual memory management because in virtual 
+memory paging system principal issue is replacement i.e. which page is to be removed so as to bring in the new page,
+ thus the use of the page replacement algorithms. 
+Demand paging is the technique used to increase system throughput.
+ To implement demand paging page replacement is primaryrequirement.
+If a system has better page replacement technique it improves demandpaging
+ which in turn drastically yields system performance Agains. 
+
+PAGE REPLACEMENT POLICIES: 
+1.	Determine which page to be removed from main memory. 
+2.	Find a free frame. 
+1)	If a frame is found use it 
+2)	if no free frame found, use page replacement algorithm to select avictim frame. 
+3)	Write the victim page to thedisk. 
+3.	Read the desired page into the new free frame, change the page and frametables. 
+4.	Restart the userprocess. 
+
+3.	LEAST RECENTLY USED (LRU): LRU algorithm uses the time of the page’s last usage.
+ It uses the recent past as an approximation of the near future, then we can replace 
+the page that has not been used for the longest period of the time i.e.
+thepagehavinglarger idle time isreplaced. 
+
+ADVANTAGE: 
+1)	The LRU policy is often used for page replacement and is considered tobe good. 
+
+DISADVANTAGES: 
+1)	It is very difficult toimplement. 
+2)	Requires substantial hardwareassistance. 
+3)	The problematic determination of the order for the frames defined by thetime of lastusage 
+ 
+
+Algorithm/Flowchart: 
+
+

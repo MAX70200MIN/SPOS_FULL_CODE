@@ -1,0 +1,76 @@
+import java.util.*;
+
+class P 
+.
+{
+    public static void main(String args[]) 
+    {
+        int burst_time[],WT[],TAT[],process[],priority[];
+        float wait_avg = 0,TAT_avg = 0;
+        int temp;
+
+        burst_time = new int[50];
+        WT = new int[50];
+        TAT = new int[50];
+        process = new int[50];
+        priority = new int[50];
+
+        Scanner s = new Scanner(System.in); 
+
+        System.out.print("Enter number of processes : ");
+        int no = s.nextInt();
+
+        System.out.println("Enter burst time for processes : ");
+        for(int i = 0; i < no; i++)
+        {
+            System.out.print("  P"+(i+1)+" :  ");
+            burst_time[i] = s.nextInt();
+            priority[i] = s.nextInt();
+            process[i] = i+1;
+        }
+
+        for(int i = 0; i < no; i++)
+        {
+            for(int j = i+1; j < no; j++)
+            {
+                if(priority[j] > priority[i])
+                {
+                    temp = burst_time[i];
+                    burst_time[i] = burst_time[j];
+                    burst_time[j] = temp;
+
+                    temp = process[i];
+                    process[i] = process[j];
+                    process[j] = temp;
+
+                    temp = priority[i];
+                    priority[i] = priority[j];
+                    priority[j] = temp;
+                }
+            }
+        }
+
+        for(int i = 1; i < no; i++)
+        {
+            WT[i] = WT[i-1] + burst_time[i-1];
+            wait_avg = wait_avg + WT[i];
+        }
+        wait_avg = wait_avg/no;
+
+        for(int i = 0; i < no; i++)
+        {
+            TAT[i] = WT[i] + burst_time[i];
+            TAT_avg = TAT_avg + TAT[i];
+        }
+        TAT_avg = TAT_avg/no;
+
+        System.out.println("\tProcess\t\tpriority\tBT\t\tWT\t\tTAT");
+        for(int i = 0 ; i < no; i++)
+        {
+            System.out.println("\tP"+process[i]+"\t\t"+priority[i]+"\t\t"+burst_time[i]+"\t\t"+WT[i]+"\t\t"+TAT[i]);
+        }
+        
+        System.out.println("Average waiting time is : "+wait_avg);
+        System.out.println("Average Turn around time is : "+TAT_avg);
+    }
+}

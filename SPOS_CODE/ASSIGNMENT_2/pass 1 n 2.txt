@@ -1,0 +1,37 @@
+Theory:
+
+
+pass-1:
+Define symbols and literals and remember them in symbol table and literal table respectively.
+Keep track of location counter
+Process pseudo-operations
+
+
+Pass-2:
+Generate object code by converting symbolic op-code into respective numeric op-code
+Generate data for literals and look for values of symbols
+
+programm working
+
+START: This instruction starts the execution of program from location 200 and label with START provides name for the program.(JOHN is name for program)
+MOVER: It moves the content of literal(=’3′) into register operand R1.
+MOVEM: It moves the content of register into memory operand(X).
+MOVER: It again moves the content of literal(=’2′) into register operand R2 and its label is specified as L1.
+LTORG: It assigns address to literals(current LC value).
+DS(Data Space): It assigns a data space of 1 to Symbol X.
+END: It finishes the program execution.
+
+
+pass 1 database:
+source programm is used as input
+for keeping track or each instruction location,location counter is used 
+machine operation table is used to represent the symbolic mnemonic also action to be taken 
+for each pseudo op code used in pass 2.
+literals of the program is stored in literal tables with their assigned locations
+lables and its coressponding value is stored in the symbol table.
+
+
+conclusion:
+thus, i have studies visual programming and implemented dynamic link library application for arthmetic operation.
+
+

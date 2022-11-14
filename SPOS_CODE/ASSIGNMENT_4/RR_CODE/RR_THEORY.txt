@@ -1,0 +1,24 @@
+THEORY :
+
+The name of this algorithm comes from the round-robin principle,
+ where each person gets an equal share of something in turns.
+ It is the oldest, simplest scheduling algorithm, which is mostly used for multitasking.
+
+In Round-robin scheduling, each ready task runs turn by turn only in a cyclic queue for a limited time slice.
+ This algorithm also offers starvation free execution of processes.
+
+
+Algorithm/Flowchart: 
+
+1-	Create an array rem_bt[] to keep track of remaining burst time of processes. This array is initially a copy of bt[] (burst timesarray) 
+2-	Create another array wt[] to store waiting times of processes. Initialize this array as 0. 
+3-	Initialize time : t =0 
+4-	Keep traversing the all processes while all processes are not done. Do following for i'th process if it is not doneyet. 
+a- If rem_bt[i] >quantum 
+(i)	t = t +quantum 
+(ii)	bt_rem[i] -=quantum; c- Else // Last cycle for thisprocess 
+(i)	t = t +bt_rem[i]; 
+(ii)	wt[i] = t -bt[i] 
+(ii) bt_rem[i] = 0; // This process is over 
+
+

@@ -1,0 +1,22 @@
+THEORY :
+
+First Come First Serve (FCFS) is an operating system scheduling algorithm that 
+automatically executes queued requests and processes in order of their arrival.
+ It is the easiest and simplest CPU scheduling algorithm.
+ In this type of algorithm, processes which requests the CPU first get the CPU allocation first.
+ This is managed with a FIFO queue. The full form of FCFS is First Come First Serve.
+
+As the process enters the ready queue, 
+its PCB (Process Control Block) is linked with the tail of the queue and, 
+when the CPU becomes free, 
+it should be assigned to the process at the beginning of the queue.
+
+Algorithm/Flowchart: 
+1. FCFS 
+1.	Input the processes along with their burst time(bt). 
+2.	Find waiting time (wt) for allprocesses. 
+3.	As first process that comes need not to wait so waiting time for process 1 will be 0 i.e. wt[0] =0. 
+4.	Find waiting time for all other processes i.e. for process i -> wt[i] = bt[i-1] + wt[i-1]. 
+5.	Find turnaround time = waiting_time + burst_time for allprocesses. 
+6.	Find average waiting time = total_waiting_time /no_of_processes. 
+7.	Similarly,findaverageturnaroundtime=total_turn_around_time/no_of_processes. 
